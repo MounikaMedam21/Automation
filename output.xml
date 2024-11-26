@@ -1,0 +1,263 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.1 (Python 3.13.0 on win32)" generated="2024-11-07T17:57:21.705397" rpa="false" schemaversion="5">
+<suite id="s1" name="TenantRegistrationTest" source="C:\Users\MedamMounika\PycharmProjects\Automation\Automation\TestCases\TenantTestCases\TenantRegistrationTest.robot">
+<kw name="Open the application" owner="loginKeywords" type="SETUP">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2024-11-07T17:57:21.948480" level="INFO">Opening browser 'chrome' to base url 'https://ig-web-channel.qa.iguroo.com/auth/signin'.</msg>
+<arg>${url}</arg>
+<arg>${browser}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2024-11-07T17:57:21.947147" elapsed="5.343024"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2024-11-07T17:57:27.290653" elapsed="0.043271"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2024-11-07T17:57:27.334264" level="INFO">Waiting for sign header to be visible</msg>
+<arg>Waiting for sign header to be visible</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2024-11-07T17:57:27.334118" elapsed="0.000193"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${sign_header}</arg>
+<arg>30s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-11-07T17:57:27.334418" elapsed="0.038993"/>
+</kw>
+<status status="PASS" start="2024-11-07T17:57:21.944977" elapsed="5.428628"/>
+</kw>
+<test id="s1-t1" name="Test Tenant Registration" line="8">
+<kw name="Login To Application" owner="loginKeywords">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-11-07T17:57:27.375583" level="INFO">Typing text '9493408792' into text field '//input[@placeholder='Enter Mobile Number or Email']'.</msg>
+<arg>${login_EmailOrMobile}</arg>
+<arg>${username}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-11-07T17:57:27.375310" elapsed="0.230156"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-11-07T17:57:27.605987" level="INFO">Typing text 'Test@123' into text field '//input[@placeholder='Password']'.</msg>
+<arg>${login_password}</arg>
+<arg>${pwd}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-11-07T17:57:27.605695" elapsed="0.124887"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-11-07T17:57:27.731351" level="INFO">Clicking element 'xpath://button[text()='Sign In']'.</msg>
+<arg>${signIn_btn}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-11-07T17:57:27.730899" elapsed="0.265716"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2024-11-07T17:57:32.997972" level="INFO">Slept 5 seconds.</msg>
+<arg>5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2024-11-07T17:57:27.997090" elapsed="5.001093"/>
+</kw>
+<arg>9493408792</arg>
+<arg>Test@123</arg>
+<status status="PASS" start="2024-11-07T17:57:27.374650" elapsed="5.623754"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2024-11-07T17:57:36.000086" level="INFO">Slept 3 seconds.</msg>
+<arg>3s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2024-11-07T17:57:32.998986" elapsed="3.001328"/>
+</kw>
+<kw name="Click on the tenant registration tab" owner="TenantRegistration">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-11-07T17:57:36.002353" level="INFO">Clicking element '//a[@id="Tenant Registration"]'.</msg>
+<arg>${btn_TenantRegTab}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-11-07T17:57:36.001907" elapsed="0.211405"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2024-11-07T17:58:06.214387" level="INFO">Slept 30 seconds.</msg>
+<arg>30s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2024-11-07T17:57:36.213575" elapsed="30.001051"/>
+</kw>
+<status status="PASS" start="2024-11-07T17:57:36.001266" elapsed="30.213586"/>
+</kw>
+<kw name="Click on the create button" owner="TenantRegistration">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-11-07T17:58:06.217509" level="INFO">Clicking element '//span[text()='Create']'.</msg>
+<arg>${btn_Create}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-11-07T17:58:06.217166" elapsed="0.207049"/>
+</kw>
+<status status="PASS" start="2024-11-07T17:58:06.216200" elapsed="0.208270"/>
+</kw>
+<kw name="Fill Tenant Registration Form" owner="TenantRegistration">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-11-07T17:58:06.426613" level="INFO">Typing text 'Software Testing4' into text field '//input[@placeholder='Full Name']'.</msg>
+<arg>${txt_FullName}</arg>
+<arg>${FullName}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-11-07T17:58:06.426117" elapsed="0.180700"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-11-07T17:58:06.607736" level="INFO">Typing text 'ST4' into text field '//input[@placeholder='Domain Name']'.</msg>
+<arg>${txt_DomainName}</arg>
+<arg>${DomainName}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-11-07T17:58:06.607238" elapsed="0.130431"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-11-07T17:58:06.738316" level="INFO">Typing text 'ABC' into text field '//input[@placeholder='Line 1']'.</msg>
+<arg>${txt_Line1}</arg>
+<arg>${Line1}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-11-07T17:58:06.737952" elapsed="0.126702"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-11-07T17:58:06.865574" level="INFO">Typing text 'BHG' into text field '//input[@placeholder='Line 2']'.</msg>
+<arg>${txt_Line2}</arg>
+<arg>${Line2}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-11-07T17:58:06.865054" elapsed="0.136680"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-11-07T17:58:07.002368" level="INFO">Typing text 'LKJ' into text field '//input[@placeholder='Line 3']'.</msg>
+<arg>${txt_Line3}</arg>
+<arg>${Line3}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-11-07T17:58:07.002016" elapsed="0.132035"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-11-07T17:58:07.134974" level="INFO">Typing text 'Hyderabad' into text field '//input[@placeholder='City']'.</msg>
+<arg>${txt_City}</arg>
+<arg>${City}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-11-07T17:58:07.134458" elapsed="0.164864"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-11-07T17:58:07.300457" level="INFO">Typing text 'Telangana' into text field '//input[@placeholder='State']'.</msg>
+<arg>${txt_State}</arg>
+<arg>${State}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-11-07T17:58:07.299891" elapsed="0.171019"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-11-07T17:58:07.471871" level="INFO">Typing text 'India' into text field '//input[@placeholder='Country']'.</msg>
+<arg>${txt_Country}</arg>
+<arg>${Country}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-11-07T17:58:07.471286" elapsed="0.151035"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-11-07T17:58:07.623094" level="INFO">Typing text 'Hello' into text field '//div[@class='mb-4 row']//child::textarea'.</msg>
+<arg>${txt_About}</arg>
+<arg>${About}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-11-07T17:58:07.622590" elapsed="0.174642"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-11-07T17:58:07.798751" level="INFO">Typing text 'Hanvidh' into text field '//input[@placeholder='First Name']'.</msg>
+<arg>${txt_FirstName}</arg>
+<arg>${FirstName}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-11-07T17:58:07.797842" elapsed="0.177745"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-11-07T17:58:07.976631" level="INFO">Typing text 'Vid' into text field '//input[@placeholder='Last Name']'.</msg>
+<arg>${txt_LastName}</arg>
+<arg>${LastName}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-11-07T17:58:07.976035" elapsed="0.152524"/>
+</kw>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2024-11-07T17:58:08.130215" level="INFO">${mobile} = +919136702894</msg>
+<var>${mobile}</var>
+<arg>'+91' + ''.join(random.choice('6789') + ''.join(random.choice('0123456789') for i in range(9)))</arg>
+<arg>random</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2024-11-07T17:58:08.129284" elapsed="0.001013"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-11-07T17:58:08.131039" level="INFO">Typing text '+919136702894' into text field '//input[@placeholder='Mobile']'.</msg>
+<arg>${txt_Mobile}</arg>
+<arg>${mobile}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-11-07T17:58:08.130605" elapsed="0.164633"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-11-07T17:58:08.296085" level="INFO">Typing text 'hanvidh629.vvidh@yopmail.com' into text field '//input[@placeholder='Email']'.</msg>
+<arg>${txt_Email}</arg>
+<arg>${Email}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-11-07T17:58:08.295551" elapsed="0.216838"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-11-07T17:58:08.513298" level="INFO">Typing text '+913740968084' into text field '//input[@placeholder='Support Number']'.</msg>
+<arg>${txt_Sup_Num}</arg>
+<arg>${SupportNum}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-11-07T17:58:08.512787" elapsed="0.209428"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${txt_Drp}</arg>
+<arg>timeout=30</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-11-07T17:58:08.722602" elapsed="0.030588"/>
+</kw>
+<kw name="Select From List By Label" owner="SeleniumLibrary">
+<msg time="2024-11-07T17:58:08.754093" level="INFO">Selecting options from selection list '//select[@aria-label='Please Select Country']' by label India.</msg>
+<arg>${txt_Drp}</arg>
+<arg>${Dropdown}</arg>
+<doc>Selects options from selection list ``locator`` by ``labels``.</doc>
+<status status="PASS" start="2024-11-07T17:58:08.753567" elapsed="0.137410"/>
+</kw>
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<msg time="2024-11-07T17:58:08.891924" level="INFO">Executing JavaScript:
+window.scrollTo(0, -document.body.scrollHeight)
+Without any arguments.</msg>
+<arg>window.scrollTo(0, -document.body.scrollHeight)</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="PASS" start="2024-11-07T17:58:08.891230" elapsed="0.040632"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-11-07T17:58:08.932761" level="INFO">Clicking element '//button[text()='Submit']'.</msg>
+<arg>${btn_Submit}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-11-07T17:58:08.932247" elapsed="0.128384"/>
+</kw>
+<return>
+<value>${mobile}</value>
+<status status="PASS" start="2024-11-07T17:58:09.060854" elapsed="0.000149"/>
+</return>
+<arg>Software Testing4</arg>
+<arg>ST4</arg>
+<arg>ABC</arg>
+<arg>BHG</arg>
+<arg>LKJ</arg>
+<arg>Hyderabad</arg>
+<arg>Telangana</arg>
+<arg>India</arg>
+<arg>Hello</arg>
+<arg>Hanvidh</arg>
+<arg>Vid</arg>
+<arg>hanvidh629.vvidh@yopmail.com</arg>
+<arg>+913740968084</arg>
+<arg>India</arg>
+<status status="PASS" start="2024-11-07T17:58:06.425200" elapsed="2.636138"/>
+</kw>
+<status status="PASS" start="2024-11-07T17:57:27.373763" elapsed="41.688164"/>
+</test>
+<status status="PASS" start="2024-11-07T17:57:21.709081" elapsed="47.353855"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="TenantRegistrationTest">TenantRegistrationTest</stat>
+</suite>
+</statistics>
+<errors>
+<msg time="2024-11-07T17:57:21.937833" level="WARN">Error in file 'C:\Users\MedamMounika\PycharmProjects\Automation\Automation\Resources\TenantResource\TenantRegistration.robot' on line 25: The '[Return]' setting is deprecated. Use the 'RETURN' statement instead.</msg>
+</errors>
+</robot>
