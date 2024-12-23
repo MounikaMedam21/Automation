@@ -1,8 +1,8 @@
 *** Settings ***
 Library   SeleniumLibrary
 Library    FakerLibrary
-Resource  ../PageObjects/LoginObjects.robot
 Resource  ../PageObjects/TenantObjects.robot
+Resource  ../PageObjects/CommonObjects.robot
 
 *** Keywords ***
 Click on the tenant registration tab
