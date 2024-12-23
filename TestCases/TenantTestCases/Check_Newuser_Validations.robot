@@ -1,7 +1,7 @@
 *** Settings ***
 Library   SeleniumLibrary
-Resource  ../../Resources/TenantResource/loginKeywords.robot
-Resource     ../../Resources/TenantResource/TenantRegistration.robot
+Resource  ../../Resource/LoginKeywords.robot
+Resource     ../../Resource/TenantKeywords.robot
 Suite Setup     Open the application
 
 *** Test Cases ***
