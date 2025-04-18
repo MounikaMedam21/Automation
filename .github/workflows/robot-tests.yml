@@ -12,7 +12,7 @@ jobs:
 
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v4
+        uses: actions/upload-artifact@f5cb1d0f674236624ab2489b1666ae30f9a4f8c5
 
 
       - name: Set up Python
