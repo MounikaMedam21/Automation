@@ -84,6 +84,7 @@ Check validation for the uniques name
     click element   ${Choose_file}
     click button  ${btn_upload}
     wait until element is visible   ${Unique_name}
+    # 
 
 
 
