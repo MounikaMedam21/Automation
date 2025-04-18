@@ -30,7 +30,7 @@ jobs:
 
       - name: Upload Robot test reports
         if: always()
-        uses: actions/upload-artifact@v3.1.3  # <-- use fixed version
+        uses: actions/upload-artifact@v3  # <-- use fixed version
         with:
           name: robot-results
           path: results/
