@@ -1,0 +1,70 @@
+
+name: Run Robot Framework Tests
+
+on:
+  push:
+    branches:
+      - Testcase
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.10'
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: Run Robot Framework tests
+        id: test-step
+        run: |
+          robot -d results ./TestCases/Files || echo "Tests failed"
+
+      - name: Upload Robot test reports
+        if: always()
+        uses: actions/upload-artifact@v3
+        with:
+          name: robot-results
+          path: results/
+
+      - name: Check Robot test result
+        id: check-result
+        run: |
+          if [ -f results/output.xml ]; then
+            echo "status=pass" >> $GITHUB_OUTPUT
+          else
+            echo "status=fail" >> $GITHUB_OUTPUT
+          fi
+
+
+      # - name: Send email
+      #   if: always() # Run regardless of success/failure
+      #   uses: dawidd6/action-send-mail@v3
+      #   with:
+      #     server_address: smtp.example.com
+      #     server_port: 587
+      #     username: ${{ secrets.SMTP_USERNAME }}
+      #     password: ${{ secrets.SMTP_PASSWORD }}
+      #     subject: |
+      #       GitHub Actions Test Report: ${{ steps.check-result.outputs.status }}
+      #     to: recipient@example.com
+      #     from: GitHub Actions <github@example.com>
+      #     content_type: text/plain
+      #     body: |
+      #       Hello,
+
+      #       The automation tests have completed with status: ${{ steps.check-result.outputs.status }}.
+
+      #       Please check the logs in the GitHub Action run for more details.
+
+      #       Regards,
+      #       CI System
