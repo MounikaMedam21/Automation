@@ -3,7 +3,7 @@ name: Run Automation Tests and Send Email
 on:
   push:
     branches:
-      - main
+      - Testcase
   pull_request:
     branches:
       - main
@@ -41,25 +41,25 @@ jobs:
             echo "status=pass" >> $GITHUB_OUTPUT
           fi
 
-      - name: Send email
-        if: always() # Run regardless of success/failure
-        uses: dawidd6/action-send-mail@v3
-        with:
-          server_address: smtp.example.com
-          server_port: 587
-          username: ${{ secrets.SMTP_USERNAME }}
-          password: ${{ secrets.SMTP_PASSWORD }}
-          subject: |
-            GitHub Actions Test Report: ${{ steps.check-result.outputs.status }}
-          to: recipient@example.com
-          from: GitHub Actions <github@example.com>
-          content_type: text/plain
-          body: |
-            Hello,
+      # - name: Send email
+      #   if: always() # Run regardless of success/failure
+      #   uses: dawidd6/action-send-mail@v3
+      #   with:
+      #     server_address: smtp.example.com
+      #     server_port: 587
+      #     username: ${{ secrets.SMTP_USERNAME }}
+      #     password: ${{ secrets.SMTP_PASSWORD }}
+      #     subject: |
+      #       GitHub Actions Test Report: ${{ steps.check-result.outputs.status }}
+      #     to: recipient@example.com
+      #     from: GitHub Actions <github@example.com>
+      #     content_type: text/plain
+      #     body: |
+      #       Hello,
 
-            The automation tests have completed with status: ${{ steps.check-result.outputs.status }}.
+      #       The automation tests have completed with status: ${{ steps.check-result.outputs.status }}.
 
-            Please check the logs in the GitHub Action run for more details.
+      #       Please check the logs in the GitHub Action run for more details.
 
-            Regards,
-            CI System
+      #       Regards,
+      #       CI System
