@@ -8,7 +8,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v3
+        uses: actions/upload-artifact@b4a8c551e67db7eb6f94dc2fc0b4c9fd7ae63c09
+
       - name: Set up Python
         uses: actions/setup-python@v4
         with:
