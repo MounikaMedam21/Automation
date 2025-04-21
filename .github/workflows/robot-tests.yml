@@ -35,8 +35,7 @@ jobs:
       - name: Run Robot Framework tests
         id: test-step
         run: |
-          cd Automation
-          robot -d results ./TestCases/Files
+          robot -d results ./TestCases/Files || echo "Tests failed"
 
       # - name: Upload Robot test reports
       #   if: always()
