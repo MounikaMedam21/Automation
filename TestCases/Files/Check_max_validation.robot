@@ -2,7 +2,7 @@
 Library   SeleniumLibrary
 Resource  ../../Resources/TenantResource/loginKeywords.robot
 Resource     ../../Resources/FilesResource/FilesKeywords.robot
-Suite Setup     Open the application   ${url}
+Suite Setup     Open the application   ${url}    ${browser}
 
 *** Test Cases ***
 Manage Files
