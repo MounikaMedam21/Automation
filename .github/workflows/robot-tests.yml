@@ -32,12 +32,12 @@ jobs:
         run: |
           robot -d results ./TestCases/Files || echo "Tests failed"
 
-      # - name: Upload Robot test reports
-      #   if: always()
-      #   uses: actions/upload-artifact@v3  # <-- use fixed version
-      #   with:
-      #     name: robot-results
-      #     path: results/
+      - name: Upload Robot test reports
+        if: always()
+        uses: actions/upload-artifact@v3  # <-- use fixed version
+        with:
+          name: robot-results
+          path: results/
 
       - name: Check Robot test result
         id: check-result
@@ -47,4 +47,3 @@ jobs:
           else
             echo "status=fail" >> $GITHUB_OUTPUT
           fi
-#  Test
