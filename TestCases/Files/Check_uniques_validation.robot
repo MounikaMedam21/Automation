@@ -11,4 +11,4 @@ Manage Files
     Search for the Username     Harika
     Click on the 3 dots tooltip
     Click on the files
-    Check validation for the uniques name   Files
+    Check validation for the uniques name    Files    ${filename}

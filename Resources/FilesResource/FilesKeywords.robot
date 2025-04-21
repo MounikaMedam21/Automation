@@ -54,9 +54,9 @@ Click on the delete to delete the uploaded files
 
 Check validation messages for new files
     click button  ${btn_upload}
-    wait until element is visibel   ${File_type_validation}
-    wait until element is visibel   ${File_name_validation}
-    wait until element is visibel   ${Choose_file_validation}
+    wait until element is visible   ${File_type_validation}
+    wait until element is visible   ${File_name_validation}
+    wait until element is visible   ${Choose_file_validation}
 Check validation message for minimum characters
     [Arguments]   ${filename}
     click element   ${File_type}
@@ -65,7 +65,7 @@ Check validation message for minimum characters
     input text  ${File_name}    ${filename}
     click element   ${Choose_file}
     click button  ${btn_upload}
-    wait until element is visibel   ${Characters_validation}
+    wait until element is visible   ${Characters_validation}
 Check validation message for maximum characters
     [Arguments]   ${username}   ${filename}
     click element   ${File_type}
@@ -74,7 +74,7 @@ Check validation message for maximum characters
     input text  ${File_name}    ${filename}
     click element   ${Choose_file}
     click button  ${btn_upload}
-    wait until element is visibel   ${Exceeded_limit_validation}
+    wait until element is visible   ${Exceeded_limit_validation}
 Check validation for the uniques name
     [Arguments]   ${username}   ${filename}
     click element   ${File_type}
@@ -83,7 +83,7 @@ Check validation for the uniques name
     input text  ${File_name}    ${filename}
     click element   ${Choose_file}
     click button  ${btn_upload}
-    wait until element is visibel   ${Unique_name}
+    wait until element is visible   ${Unique_name}
 
 
 
