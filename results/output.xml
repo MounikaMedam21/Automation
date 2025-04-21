@@ -1,0 +1,1155 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 6.1.1 (Python 3.12.2 on win32)" generated="20250421 11:42:53.146" rpa="false" schemaversion="4">
+<suite id="s1" name="Files" source="D:\Github_pipeline\automation\TestCases\Files">
+<suite id="s1-s1" name="Check max validation" source="D:\Github_pipeline\automation\TestCases\Files\Check_max_validation.robot">
+<kw name="Open the application" library="loginKeywords" type="SETUP">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${url}</arg>
+<arg>${browser}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20250421 11:42:53.365" level="INFO">Opening browser 'Chrome' to base url 'https://ig-web-channel.qa.iguroo.com/auth/signin'.</msg>
+<status status="PASS" starttime="20250421 11:42:53.365" endtime="20250421 11:43:02.555"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20250421 11:43:02.555" endtime="20250421 11:43:02.583"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>Waiting for sign header to be visible</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20250421 11:43:02.584" level="INFO">Waiting for sign header to be visible</msg>
+<status status="PASS" starttime="20250421 11:43:02.584" endtime="20250421 11:43:02.584"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${sign_header}</arg>
+<arg>30s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20250421 11:43:02.584" endtime="20250421 11:43:02.633"/>
+</kw>
+<status status="PASS" starttime="20250421 11:42:53.365" endtime="20250421 11:43:02.633"/>
+</kw>
+<test id="s1-s1-t1" name="Manage Files" line="8">
+<kw name="Login To Application" library="loginKeywords">
+<arg>9493408792</arg>
+<arg>Test@123</arg>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${login_EmailOrMobile}</arg>
+<arg>${username}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20250421 11:43:02.633" level="INFO">Typing text '9493408792' into text field '//input[@placeholder='Enter Mobile Number or Email']'.</msg>
+<status status="PASS" starttime="20250421 11:43:02.633" endtime="20250421 11:43:02.811"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${login_password}</arg>
+<arg>${pwd}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20250421 11:43:02.811" level="INFO">Typing text 'Test@123' into text field '//input[@placeholder='Password']'.</msg>
+<status status="PASS" starttime="20250421 11:43:02.811" endtime="20250421 11:43:02.932"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${signIn_btn}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20250421 11:43:02.933" level="INFO">Clicking element 'xpath://button[text()='Sign In']'.</msg>
+<status status="PASS" starttime="20250421 11:43:02.932" endtime="20250421 11:43:03.131"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20250421 11:43:08.131" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20250421 11:43:03.131" endtime="20250421 11:43:08.131"/>
+</kw>
+<status status="PASS" starttime="20250421 11:43:02.633" endtime="20250421 11:43:08.131"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>3s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20250421 11:43:11.132" level="INFO">Slept 3 seconds</msg>
+<status status="PASS" starttime="20250421 11:43:08.131" endtime="20250421 11:43:11.132"/>
+</kw>
+<kw name="Search for the Username" library="FilesKeywords">
+<arg>Harika</arg>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${Search_username}</arg>
+<arg>timeout=30</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20250421 11:43:11.132" endtime="20250421 11:43:13.777"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${Search_username}</arg>
+<arg>${username}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20250421 11:43:13.777" level="INFO">Typing text 'Harika' into text field '//input[@placeholder="Search"]'.</msg>
+<status status="PASS" starttime="20250421 11:43:13.777" endtime="20250421 11:43:13.947"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${btn_Search}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20250421 11:43:13.948" level="INFO">Clicking element '//button[contains(text(), 'Search')]'.</msg>
+<status status="PASS" starttime="20250421 11:43:13.948" endtime="20250421 11:43:14.140"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>10s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20250421 11:43:24.140" level="INFO">Slept 10 seconds</msg>
+<status status="PASS" starttime="20250421 11:43:14.140" endtime="20250421 11:43:24.140"/>
+</kw>
+<kw name="Execute Javascript" library="SeleniumLibrary">
+<arg>window.scrollBy(-1000, 0)</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<msg timestamp="20250421 11:43:24.140" level="INFO">Executing JavaScript:
+window.scrollBy(-1000, 0)
+Without any arguments.</msg>
+<status status="PASS" starttime="20250421 11:43:24.140" endtime="20250421 11:43:24.206"/>
+</kw>
+<status status="PASS" starttime="20250421 11:43:11.132" endtime="20250421 11:43:24.206"/>
+</kw>
+<kw name="Click on the 3 dots tooltip" library="FilesKeywords">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${Tooptip}</arg>
+<arg>timeout=30</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<msg timestamp="20250421 11:43:54.415" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-1.png"&gt;&lt;img src="selenium-screenshot-1.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg timestamp="20250421 11:43:54.415" level="FAIL">Element '//img[@alt="edit"][1]' not visible after 30 seconds.</msg>
+<status status="FAIL" starttime="20250421 11:43:24.207" endtime="20250421 11:43:54.423"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${Tooptip}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="NOT RUN" starttime="20250421 11:43:54.423" endtime="20250421 11:43:54.423"/>
+</kw>
+<status status="FAIL" starttime="20250421 11:43:24.207" endtime="20250421 11:43:54.423"/>
+</kw>
+<kw name="Click on the files" library="FilesKeywords">
+<status status="NOT RUN" starttime="20250421 11:43:54.423" endtime="20250421 11:43:54.424"/>
+</kw>
+<kw name="Check validation message for maximum characters" library="FilesKeywords">
+<arg>fgdffdgfdhfhjdsghdfhsdfdsghfdghfdshgfsdgdsghfdfdfdf</arg>
+<arg>${filename}</arg>
+<status status="NOT RUN" starttime="20250421 11:43:54.424" endtime="20250421 11:43:54.424"/>
+</kw>
+<status status="FAIL" starttime="20250421 11:43:02.633" endtime="20250421 11:43:54.424">Element '//img[@alt="edit"][1]' not visible after 30 seconds.</status>
+</test>
+<status status="FAIL" starttime="20250421 11:42:53.156" endtime="20250421 11:43:54.425"/>
+</suite>
+<suite id="s1-s2" name="Check mincha validations" source="D:\Github_pipeline\automation\TestCases\Files\Check_mincha_validations.robot">
+<kw name="Open the application" library="loginKeywords" type="SETUP">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${url}</arg>
+<arg>${browser}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20250421 11:43:54.439" level="INFO">Opening browser 'Chrome' to base url 'https://ig-web-channel.qa.iguroo.com/auth/signin'.</msg>
+<status status="PASS" starttime="20250421 11:43:54.439" endtime="20250421 11:44:02.265"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20250421 11:44:02.265" endtime="20250421 11:44:02.301"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>Waiting for sign header to be visible</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20250421 11:44:02.303" level="INFO">Waiting for sign header to be visible</msg>
+<status status="PASS" starttime="20250421 11:44:02.301" endtime="20250421 11:44:02.303"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${sign_header}</arg>
+<arg>30s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20250421 11:44:02.303" endtime="20250421 11:44:02.342"/>
+</kw>
+<status status="PASS" starttime="20250421 11:43:54.439" endtime="20250421 11:44:02.342"/>
+</kw>
+<test id="s1-s2-t1" name="Manage Files" line="8">
+<kw name="Login To Application" library="loginKeywords">
+<arg>9493408792</arg>
+<arg>Test@123</arg>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${login_EmailOrMobile}</arg>
+<arg>${username}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20250421 11:44:02.343" level="INFO">Typing text '9493408792' into text field '//input[@placeholder='Enter Mobile Number or Email']'.</msg>
+<status status="PASS" starttime="20250421 11:44:02.343" endtime="20250421 11:44:02.548"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${login_password}</arg>
+<arg>${pwd}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20250421 11:44:02.548" level="INFO">Typing text 'Test@123' into text field '//input[@placeholder='Password']'.</msg>
+<status status="PASS" starttime="20250421 11:44:02.548" endtime="20250421 11:44:02.656"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${signIn_btn}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20250421 11:44:02.656" level="INFO">Clicking element 'xpath://button[text()='Sign In']'.</msg>
+<status status="PASS" starttime="20250421 11:44:02.656" endtime="20250421 11:44:02.866"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20250421 11:44:07.867" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20250421 11:44:02.866" endtime="20250421 11:44:07.867"/>
+</kw>
+<status status="PASS" starttime="20250421 11:44:02.342" endtime="20250421 11:44:07.867"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>3s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20250421 11:44:10.867" level="INFO">Slept 3 seconds</msg>
+<status status="PASS" starttime="20250421 11:44:07.867" endtime="20250421 11:44:10.867"/>
+</kw>
+<kw name="Search for the Username" library="FilesKeywords">
+<arg>Harika</arg>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${Search_username}</arg>
+<arg>timeout=30</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20250421 11:44:10.867" endtime="20250421 11:44:11.211"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${Search_username}</arg>
+<arg>${username}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20250421 11:44:11.211" level="INFO">Typing text 'Harika' into text field '//input[@placeholder="Search"]'.</msg>
+<status status="PASS" starttime="20250421 11:44:11.211" endtime="20250421 11:44:11.566"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${btn_Search}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20250421 11:44:11.566" level="INFO">Clicking element '//button[contains(text(), 'Search')]'.</msg>
+<status status="PASS" starttime="20250421 11:44:11.566" endtime="20250421 11:44:11.706"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>10s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20250421 11:44:21.706" level="INFO">Slept 10 seconds</msg>
+<status status="PASS" starttime="20250421 11:44:11.706" endtime="20250421 11:44:21.706"/>
+</kw>
+<kw name="Execute Javascript" library="SeleniumLibrary">
+<arg>window.scrollBy(-1000, 0)</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<msg timestamp="20250421 11:44:21.708" level="INFO">Executing JavaScript:
+window.scrollBy(-1000, 0)
+Without any arguments.</msg>
+<status status="PASS" starttime="20250421 11:44:21.707" endtime="20250421 11:44:21.741"/>
+</kw>
+<status status="PASS" starttime="20250421 11:44:10.867" endtime="20250421 11:44:21.741"/>
+</kw>
+<kw name="Click on the 3 dots tooltip" library="FilesKeywords">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${Tooptip}</arg>
+<arg>timeout=30</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<msg timestamp="20250421 11:44:29.403" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: Message: invalid session id
+Stacktrace:
+	GetHandleVerifier [0x00007FF72A445355+78597]
+	GetHandleVerifier [0x00007FF72A4453B0+78688]
+	(No symbol) [0x00007FF72A1F8FDC]
+	(No symbol) [0x00007FF72A23F51F]
+	(No symbol) [0x00007FF72A276FB2]
+	(No symbol) [0x00007FF72A2719CC]
+	(No symbol) [0x00007FF72A270AA9]
+	(No symbol) [0x00007FF72A1C5AB5]
+	GetHandleVerifier [0x00007FF72A6EEF0D+2870973]
+	GetHandleVerifier [0x00007FF72A6E96B8+2848360]
+	GetHandleVerifier [0x00007FF72A706993+2967875]
+	GetHandleVerifier [0x00007FF72A46019A+188746]
+	GetHandleVerifier [0x00007FF72A46847F+222255]
+	(No symbol) [0x00007FF72A1C4B28]
+	GetHandleVerifier [0x00007FF72A7F0688+3925560]
+	BaseThreadInitThunk [0x00007FFC213EE8D7+23]
+	RtlUserThreadStart [0x00007FFC22CB14FC+44]
+</msg>
+<msg timestamp="20250421 11:44:29.406" level="FAIL">InvalidSessionIdException: Message: invalid session id: session deleted as the browser has closed the connection
+from disconnected: not connected to DevTools
+  (Session info: chrome=135.0.7049.96)
+Stacktrace:
+	GetHandleVerifier [0x00007FF72A445355+78597]
+	GetHandleVerifier [0x00007FF72A4453B0+78688]
+	(No symbol) [0x00007FF72A1F91AA]
+	(No symbol) [0x00007FF72A1E4EF5]
+	(No symbol) [0x00007FF72A209F04]
+	(No symbol) [0x00007FF72A27ED0F]
+	(No symbol) [0x00007FF72A29EBB2]
+	(No symbol) [0x00007FF72A276EC3]
+	(No symbol) [0x00007FF72A2403F8]
+	(No symbol) [0x00007FF72A241163]
+	GetHandleVerifier [0x00007FF72A6EEF0D+2870973]
+	GetHandleVerifier [0x00007FF72A6E96B8+2848360]
+	GetHandleVerifier [0x00007FF72A706993+2967875]
+	GetHandleVerifier [0x00007FF72A46019A+188746]
+	GetHandleVerifier [0x00007FF72A46847F+222255]
+	GetHandleVerifier [0x00007FF72A44D2D4+111236]
+	GetHandleVerifier [0x00007FF72A44D482+111666]
+	GetHandleVerifier [0x00007FF72A4335A9+5465]
+	BaseThreadInitThunk [0x00007FFC213EE8D7+23]
+	RtlUserThreadStart [0x00007FFC22CB14FC+44]
+</msg>
+<status status="FAIL" starttime="20250421 11:44:21.750" endtime="20250421 11:44:29.416"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${Tooptip}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="NOT RUN" starttime="20250421 11:44:29.417" endtime="20250421 11:44:29.417"/>
+</kw>
+<status status="FAIL" starttime="20250421 11:44:21.741" endtime="20250421 11:44:29.417"/>
+</kw>
+<kw name="Click on the files" library="FilesKeywords">
+<status status="NOT RUN" starttime="20250421 11:44:29.417" endtime="20250421 11:44:29.417"/>
+</kw>
+<kw name="Check validation message for minimum characters" library="FilesKeywords">
+<arg>tes</arg>
+<status status="NOT RUN" starttime="20250421 11:44:29.417" endtime="20250421 11:44:29.418"/>
+</kw>
+<status status="FAIL" starttime="20250421 11:44:02.342" endtime="20250421 11:44:29.418">InvalidSessionIdException: Message: invalid session id: session deleted as the browser has closed the connection
+from disconnected: not connected to DevTools
+  (Session info: chrome=135.0.7049.96)
+Stacktrace:
+	GetHandleVerifier [0x00007FF72A445355+78597]
+	GetHandleVerifier [0x00007FF72A4453B0+78688]
+	(No symbol) [0x00007FF72A1F91AA]
+	(No symbol) [0x00007FF72A1E4EF5]
+	(No symbol) [0x00007FF72A209F04]
+	(No symbol) [0x00007FF72A27ED0F]
+	(No symbol) [0x00007FF72A29EBB2]
+	(No symbol) [0x00007FF72A276EC3]
+	(No symbol) [0x00007FF72A2403F8]
+	(No symbol) [0x00007FF72A241163]
+	GetHandleVerifier [0x00007FF72A6EEF0D+2870973]
+	GetHandleVerifier [0x00007FF72A6E96B8+2848360]
+	GetHandleVerifier [0x00007FF72A706993+2967875]
+	GetHandleVerifier [0x00007FF72A46019A+188746]
+	GetHandleVerifier [0x00007FF72A46847F+222255]
+	GetHandleVerifier [0x00007FF72A44D2D4+111236]
+	GetHandleVerifier [0x00007FF72A44D482+111666]
+	GetHandleVerifier [0x00007FF72A4335A9+5465]
+	BaseThreadInitThunk [0x00007FFC213EE8D7+23]
+	RtlUserThreadStart [0x00007FFC22CB14FC+44]
+</status>
+</test>
+<status status="FAIL" starttime="20250421 11:43:54.426" endtime="20250421 11:44:29.421"/>
+</suite>
+<suite id="s1-s3" name="Check newfile validations" source="D:\Github_pipeline\automation\TestCases\Files\Check_newfile_validations.robot">
+<kw name="Open the application" library="loginKeywords" type="SETUP">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${url}</arg>
+<arg>${browser}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20250421 11:44:29.442" level="INFO">Opening browser 'Chrome' to base url 'https://ig-web-channel.qa.iguroo.com/auth/signin'.</msg>
+<status status="PASS" starttime="20250421 11:44:29.440" endtime="20250421 11:44:35.965"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<msg timestamp="20250421 11:44:35.969" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=135.0.7049.96)
+Stacktrace:
+	GetHandleVerifier [0x00007FF72A445355+78597]
+	GetHandleVerifier [0x00007FF72A4453B0+78688]
+	(No symbol) [0x00007FF72A1F91AA]
+	(No symbol) [0x00007FF72A1D1B63]
+	(No symbol) [0x00007FF72A27EB6E]
+	(No symbol) [0x00007FF72A29EBB2]
+	(No symbol) [0x00007FF72A276EC3]
+	(No symbol) [0x00007FF72A2403F8]
+	(No symbol) [0x00007FF72A241163]
+	GetHandleVerifier [0x00007FF72A6EEF0D+2870973]
+	GetHandleVerifier [0x00007FF72A6E96B8+2848360]
+	GetHandleVerifier [0x00007FF72A706993+2967875]
+	GetHandleVerifier [0x00007FF72A46019A+188746]
+	GetHandleVerifier [0x00007FF72A46847F+222255]
+	GetHandleVerifier [0x00007FF72A44D2D4+111236]
+	GetHandleVerifier [0x00007FF72A44D482+111666]
+	GetHandleVerifier [0x00007FF72A4335A9+5465]
+	BaseThreadInitThunk [0x00007FFC213EE8D7+23]
+	RtlUserThreadStart [0x00007FFC22CB14FC+44]
+</msg>
+<msg timestamp="20250421 11:44:35.969" level="FAIL">NoSuchWindowException: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=135.0.7049.96)
+Stacktrace:
+	GetHandleVerifier [0x00007FF72A445355+78597]
+	GetHandleVerifier [0x00007FF72A4453B0+78688]
+	(No symbol) [0x00007FF72A1F91AA]
+	(No symbol) [0x00007FF72A1D1B63]
+	(No symbol) [0x00007FF72A27EB6E]
+	(No symbol) [0x00007FF72A29EBB2]
+	(No symbol) [0x00007FF72A276EC3]
+	(No symbol) [0x00007FF72A2403F8]
+	(No symbol) [0x00007FF72A241163]
+	GetHandleVerifier [0x00007FF72A6EEF0D+2870973]
+	GetHandleVerifier [0x00007FF72A6E96B8+2848360]
+	GetHandleVerifier [0x00007FF72A706993+2967875]
+	GetHandleVerifier [0x00007FF72A46019A+188746]
+	GetHandleVerifier [0x00007FF72A46847F+222255]
+	GetHandleVerifier [0x00007FF72A44D2D4+111236]
+	GetHandleVerifier [0x00007FF72A44D482+111666]
+	GetHandleVerifier [0x00007FF72A4335A9+5465]
+	BaseThreadInitThunk [0x00007FFC213EE8D7+23]
+	RtlUserThreadStart [0x00007FFC22CB14FC+44]
+</msg>
+<status status="FAIL" starttime="20250421 11:44:35.966" endtime="20250421 11:44:35.975"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>Waiting for sign header to be visible</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" starttime="20250421 11:44:35.975" endtime="20250421 11:44:35.975"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${sign_header}</arg>
+<arg>30s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="NOT RUN" starttime="20250421 11:44:35.975" endtime="20250421 11:44:35.975"/>
+</kw>
+<status status="FAIL" starttime="20250421 11:44:29.440" endtime="20250421 11:44:35.975"/>
+</kw>
+<test id="s1-s3-t1" name="Manage Files" line="8">
+<status status="FAIL" starttime="20250421 11:44:35.975" endtime="20250421 11:44:35.976">Parent suite setup failed:
+NoSuchWindowException: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=135.0.7049.96)
+Stacktrace:
+	GetHandleVerifier [0x00007FF72A445355+78597]
+	GetHandleVerifier [0x00007FF72A4453B0+78688]
+	(No symbol) [0x00007FF72A1F91AA]
+	(No symbol) [0x00007FF72A1D1B63]
+	(No symbol) [0x00007FF72A27EB6E]
+	(No symbol) [0x00007FF72A29EBB2]
+	(No symbol) [0x00007FF72A276EC3]
+	(No symbol) [0x00007FF72A2403F8]
+	(No symbol) [0x00007FF72A241163]
+	GetHandleVerifier [0x00007FF72A6EEF0D+2870973]
+	GetHandleVerifier [0x00007FF72A6E96B8+2848360]
+	GetHandleVerifier [0x00007FF72A706993+2967875]
+	GetHandleVerifier [0x00007FF72A46019A+188746]
+	GetHandleVerifier [0x00007FF72A46847F+222255]
+	GetHandleVerifier [0x00007FF72A44D2D4+111236]
+	GetHandleVerifier [0x00007FF72A44D482+111666]
+	GetHandleVerifier [0x00007FF72A4335A9+5465]
+	BaseThreadInitThunk [0x00007FFC213EE8D7+23]
+	RtlUserThreadStart [0x00007FFC22CB14FC+44]
+</status>
+</test>
+<status status="FAIL" starttime="20250421 11:44:29.423" endtime="20250421 11:44:35.977">Suite setup failed:
+NoSuchWindowException: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=135.0.7049.96)
+Stacktrace:
+	GetHandleVerifier [0x00007FF72A445355+78597]
+	GetHandleVerifier [0x00007FF72A4453B0+78688]
+	(No symbol) [0x00007FF72A1F91AA]
+	(No symbol) [0x00007FF72A1D1B63]
+	(No symbol) [0x00007FF72A27EB6E]
+	(No symbol) [0x00007FF72A29EBB2]
+	(No symbol) [0x00007FF72A276EC3]
+	(No symbol) [0x00007FF72A2403F8]
+	(No symbol) [0x00007FF72A241163]
+	GetHandleVerifier [0x00007FF72A6EEF0D+2870973]
+	GetHandleVerifier [0x00007FF72A6E96B8+2848360]
+	GetHandleVerifier [0x00007FF72A706993+2967875]
+	GetHandleVerifier [0x00007FF72A46019A+188746]
+	GetHandleVerifier [0x00007FF72A46847F+222255]
+	GetHandleVerifier [0x00007FF72A44D2D4+111236]
+	GetHandleVerifier [0x00007FF72A44D482+111666]
+	GetHandleVerifier [0x00007FF72A4335A9+5465]
+	BaseThreadInitThunk [0x00007FFC213EE8D7+23]
+	RtlUserThreadStart [0x00007FFC22CB14FC+44]
+</status>
+</suite>
+<suite id="s1-s4" name="Check uniques validation" source="D:\Github_pipeline\automation\TestCases\Files\Check_uniques_validation.robot">
+<kw name="Open the application" library="loginKeywords" type="SETUP">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${url}</arg>
+<arg>${browser}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20250421 11:44:36.013" level="INFO">Opening browser 'Chrome' to base url 'https://ig-web-channel.qa.iguroo.com/auth/signin'.</msg>
+<status status="PASS" starttime="20250421 11:44:36.012" endtime="20250421 11:44:39.676"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<msg timestamp="20250421 11:44:39.680" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=135.0.7049.96)
+Stacktrace:
+	GetHandleVerifier [0x00007FF72A445355+78597]
+	GetHandleVerifier [0x00007FF72A4453B0+78688]
+	(No symbol) [0x00007FF72A1F91AA]
+	(No symbol) [0x00007FF72A1D1B63]
+	(No symbol) [0x00007FF72A27EB6E]
+	(No symbol) [0x00007FF72A29EBB2]
+	(No symbol) [0x00007FF72A276EC3]
+	(No symbol) [0x00007FF72A2403F8]
+	(No symbol) [0x00007FF72A241163]
+	GetHandleVerifier [0x00007FF72A6EEF0D+2870973]
+	GetHandleVerifier [0x00007FF72A6E96B8+2848360]
+	GetHandleVerifier [0x00007FF72A706993+2967875]
+	GetHandleVerifier [0x00007FF72A46019A+188746]
+	GetHandleVerifier [0x00007FF72A46847F+222255]
+	GetHandleVerifier [0x00007FF72A44D2D4+111236]
+	GetHandleVerifier [0x00007FF72A44D482+111666]
+	GetHandleVerifier [0x00007FF72A4335A9+5465]
+	BaseThreadInitThunk [0x00007FFC213EE8D7+23]
+	RtlUserThreadStart [0x00007FFC22CB14FC+44]
+</msg>
+<msg timestamp="20250421 11:44:39.681" level="FAIL">NoSuchWindowException: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=135.0.7049.96)
+Stacktrace:
+	GetHandleVerifier [0x00007FF72A445355+78597]
+	GetHandleVerifier [0x00007FF72A4453B0+78688]
+	(No symbol) [0x00007FF72A1F91AA]
+	(No symbol) [0x00007FF72A1D1B63]
+	(No symbol) [0x00007FF72A27EB6E]
+	(No symbol) [0x00007FF72A29EBB2]
+	(No symbol) [0x00007FF72A276EC3]
+	(No symbol) [0x00007FF72A2403F8]
+	(No symbol) [0x00007FF72A241163]
+	GetHandleVerifier [0x00007FF72A6EEF0D+2870973]
+	GetHandleVerifier [0x00007FF72A6E96B8+2848360]
+	GetHandleVerifier [0x00007FF72A706993+2967875]
+	GetHandleVerifier [0x00007FF72A46019A+188746]
+	GetHandleVerifier [0x00007FF72A46847F+222255]
+	GetHandleVerifier [0x00007FF72A44D2D4+111236]
+	GetHandleVerifier [0x00007FF72A44D482+111666]
+	GetHandleVerifier [0x00007FF72A4335A9+5465]
+	BaseThreadInitThunk [0x00007FFC213EE8D7+23]
+	RtlUserThreadStart [0x00007FFC22CB14FC+44]
+</msg>
+<status status="FAIL" starttime="20250421 11:44:39.676" endtime="20250421 11:44:39.682"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>Waiting for sign header to be visible</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" starttime="20250421 11:44:39.682" endtime="20250421 11:44:39.682"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${sign_header}</arg>
+<arg>30s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="NOT RUN" starttime="20250421 11:44:39.682" endtime="20250421 11:44:39.682"/>
+</kw>
+<status status="FAIL" starttime="20250421 11:44:36.012" endtime="20250421 11:44:39.683"/>
+</kw>
+<test id="s1-s4-t1" name="Manage Files" line="8">
+<status status="FAIL" starttime="20250421 11:44:39.683" endtime="20250421 11:44:39.683">Parent suite setup failed:
+NoSuchWindowException: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=135.0.7049.96)
+Stacktrace:
+	GetHandleVerifier [0x00007FF72A445355+78597]
+	GetHandleVerifier [0x00007FF72A4453B0+78688]
+	(No symbol) [0x00007FF72A1F91AA]
+	(No symbol) [0x00007FF72A1D1B63]
+	(No symbol) [0x00007FF72A27EB6E]
+	(No symbol) [0x00007FF72A29EBB2]
+	(No symbol) [0x00007FF72A276EC3]
+	(No symbol) [0x00007FF72A2403F8]
+	(No symbol) [0x00007FF72A241163]
+	GetHandleVerifier [0x00007FF72A6EEF0D+2870973]
+	GetHandleVerifier [0x00007FF72A6E96B8+2848360]
+	GetHandleVerifier [0x00007FF72A706993+2967875]
+	GetHandleVerifier [0x00007FF72A46019A+188746]
+	GetHandleVerifier [0x00007FF72A46847F+222255]
+	GetHandleVerifier [0x00007FF72A44D2D4+111236]
+	GetHandleVerifier [0x00007FF72A44D482+111666]
+	GetHandleVerifier [0x00007FF72A4335A9+5465]
+	BaseThreadInitThunk [0x00007FFC213EE8D7+23]
+	RtlUserThreadStart [0x00007FFC22CB14FC+44]
+</status>
+</test>
+<status status="FAIL" starttime="20250421 11:44:35.994" endtime="20250421 11:44:39.684">Suite setup failed:
+NoSuchWindowException: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=135.0.7049.96)
+Stacktrace:
+	GetHandleVerifier [0x00007FF72A445355+78597]
+	GetHandleVerifier [0x00007FF72A4453B0+78688]
+	(No symbol) [0x00007FF72A1F91AA]
+	(No symbol) [0x00007FF72A1D1B63]
+	(No symbol) [0x00007FF72A27EB6E]
+	(No symbol) [0x00007FF72A29EBB2]
+	(No symbol) [0x00007FF72A276EC3]
+	(No symbol) [0x00007FF72A2403F8]
+	(No symbol) [0x00007FF72A241163]
+	GetHandleVerifier [0x00007FF72A6EEF0D+2870973]
+	GetHandleVerifier [0x00007FF72A6E96B8+2848360]
+	GetHandleVerifier [0x00007FF72A706993+2967875]
+	GetHandleVerifier [0x00007FF72A46019A+188746]
+	GetHandleVerifier [0x00007FF72A46847F+222255]
+	GetHandleVerifier [0x00007FF72A44D2D4+111236]
+	GetHandleVerifier [0x00007FF72A44D482+111666]
+	GetHandleVerifier [0x00007FF72A4335A9+5465]
+	BaseThreadInitThunk [0x00007FFC213EE8D7+23]
+	RtlUserThreadStart [0x00007FFC22CB14FC+44]
+</status>
+</suite>
+<suite id="s1-s5" name="Click delete" source="D:\Github_pipeline\automation\TestCases\Files\Click_delete.robot">
+<kw name="Open the application" library="loginKeywords" type="SETUP">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${url}</arg>
+<arg>${browser}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20250421 11:44:39.711" level="INFO">Opening browser 'Chrome' to base url 'https://ig-web-channel.qa.iguroo.com/auth/signin'.</msg>
+<status status="PASS" starttime="20250421 11:44:39.710" endtime="20250421 11:44:42.426"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<msg timestamp="20250421 11:44:42.426" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=135.0.7049.96)
+Stacktrace:
+	GetHandleVerifier [0x00007FF72A445355+78597]
+	GetHandleVerifier [0x00007FF72A4453B0+78688]
+	(No symbol) [0x00007FF72A1F91AA]
+	(No symbol) [0x00007FF72A1D1B63]
+	(No symbol) [0x00007FF72A27EB6E]
+	(No symbol) [0x00007FF72A29EBB2]
+	(No symbol) [0x00007FF72A276EC3]
+	(No symbol) [0x00007FF72A2403F8]
+	(No symbol) [0x00007FF72A241163]
+	GetHandleVerifier [0x00007FF72A6EEF0D+2870973]
+	GetHandleVerifier [0x00007FF72A6E96B8+2848360]
+	GetHandleVerifier [0x00007FF72A706993+2967875]
+	GetHandleVerifier [0x00007FF72A46019A+188746]
+	GetHandleVerifier [0x00007FF72A46847F+222255]
+	GetHandleVerifier [0x00007FF72A44D2D4+111236]
+	GetHandleVerifier [0x00007FF72A44D482+111666]
+	GetHandleVerifier [0x00007FF72A4335A9+5465]
+	BaseThreadInitThunk [0x00007FFC213EE8D7+23]
+	RtlUserThreadStart [0x00007FFC22CB14FC+44]
+</msg>
+<msg timestamp="20250421 11:44:42.426" level="FAIL">NoSuchWindowException: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=135.0.7049.96)
+Stacktrace:
+	GetHandleVerifier [0x00007FF72A445355+78597]
+	GetHandleVerifier [0x00007FF72A4453B0+78688]
+	(No symbol) [0x00007FF72A1F91AA]
+	(No symbol) [0x00007FF72A1D1B63]
+	(No symbol) [0x00007FF72A27EB6E]
+	(No symbol) [0x00007FF72A29EBB2]
+	(No symbol) [0x00007FF72A276EC3]
+	(No symbol) [0x00007FF72A2403F8]
+	(No symbol) [0x00007FF72A241163]
+	GetHandleVerifier [0x00007FF72A6EEF0D+2870973]
+	GetHandleVerifier [0x00007FF72A6E96B8+2848360]
+	GetHandleVerifier [0x00007FF72A706993+2967875]
+	GetHandleVerifier [0x00007FF72A46019A+188746]
+	GetHandleVerifier [0x00007FF72A46847F+222255]
+	GetHandleVerifier [0x00007FF72A44D2D4+111236]
+	GetHandleVerifier [0x00007FF72A44D482+111666]
+	GetHandleVerifier [0x00007FF72A4335A9+5465]
+	BaseThreadInitThunk [0x00007FFC213EE8D7+23]
+	RtlUserThreadStart [0x00007FFC22CB14FC+44]
+</msg>
+<status status="FAIL" starttime="20250421 11:44:42.426" endtime="20250421 11:44:42.426"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>Waiting for sign header to be visible</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" starttime="20250421 11:44:42.426" endtime="20250421 11:44:42.426"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${sign_header}</arg>
+<arg>30s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="NOT RUN" starttime="20250421 11:44:42.426" endtime="20250421 11:44:42.426"/>
+</kw>
+<status status="FAIL" starttime="20250421 11:44:39.710" endtime="20250421 11:44:42.426"/>
+</kw>
+<test id="s1-s5-t1" name="Manage Files" line="8">
+<status status="FAIL" starttime="20250421 11:44:42.426" endtime="20250421 11:44:42.426">Parent suite setup failed:
+NoSuchWindowException: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=135.0.7049.96)
+Stacktrace:
+	GetHandleVerifier [0x00007FF72A445355+78597]
+	GetHandleVerifier [0x00007FF72A4453B0+78688]
+	(No symbol) [0x00007FF72A1F91AA]
+	(No symbol) [0x00007FF72A1D1B63]
+	(No symbol) [0x00007FF72A27EB6E]
+	(No symbol) [0x00007FF72A29EBB2]
+	(No symbol) [0x00007FF72A276EC3]
+	(No symbol) [0x00007FF72A2403F8]
+	(No symbol) [0x00007FF72A241163]
+	GetHandleVerifier [0x00007FF72A6EEF0D+2870973]
+	GetHandleVerifier [0x00007FF72A6E96B8+2848360]
+	GetHandleVerifier [0x00007FF72A706993+2967875]
+	GetHandleVerifier [0x00007FF72A46019A+188746]
+	GetHandleVerifier [0x00007FF72A46847F+222255]
+	GetHandleVerifier [0x00007FF72A44D2D4+111236]
+	GetHandleVerifier [0x00007FF72A44D482+111666]
+	GetHandleVerifier [0x00007FF72A4335A9+5465]
+	BaseThreadInitThunk [0x00007FFC213EE8D7+23]
+	RtlUserThreadStart [0x00007FFC22CB14FC+44]
+</status>
+</test>
+<status status="FAIL" starttime="20250421 11:44:39.685" endtime="20250421 11:44:42.439">Suite setup failed:
+NoSuchWindowException: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=135.0.7049.96)
+Stacktrace:
+	GetHandleVerifier [0x00007FF72A445355+78597]
+	GetHandleVerifier [0x00007FF72A4453B0+78688]
+	(No symbol) [0x00007FF72A1F91AA]
+	(No symbol) [0x00007FF72A1D1B63]
+	(No symbol) [0x00007FF72A27EB6E]
+	(No symbol) [0x00007FF72A29EBB2]
+	(No symbol) [0x00007FF72A276EC3]
+	(No symbol) [0x00007FF72A2403F8]
+	(No symbol) [0x00007FF72A241163]
+	GetHandleVerifier [0x00007FF72A6EEF0D+2870973]
+	GetHandleVerifier [0x00007FF72A6E96B8+2848360]
+	GetHandleVerifier [0x00007FF72A706993+2967875]
+	GetHandleVerifier [0x00007FF72A46019A+188746]
+	GetHandleVerifier [0x00007FF72A46847F+222255]
+	GetHandleVerifier [0x00007FF72A44D2D4+111236]
+	GetHandleVerifier [0x00007FF72A44D482+111666]
+	GetHandleVerifier [0x00007FF72A4335A9+5465]
+	BaseThreadInitThunk [0x00007FFC213EE8D7+23]
+	RtlUserThreadStart [0x00007FFC22CB14FC+44]
+</status>
+</suite>
+<suite id="s1-s6" name="Click files" source="D:\Github_pipeline\automation\TestCases\Files\Click_files.robot">
+<kw name="Open the application" library="loginKeywords" type="SETUP">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${url}</arg>
+<arg>${browser}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20250421 11:44:42.475" level="INFO">Opening browser 'Chrome' to base url 'https://ig-web-channel.qa.iguroo.com/auth/signin'.</msg>
+<status status="PASS" starttime="20250421 11:44:42.475" endtime="20250421 11:44:45.081"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<msg timestamp="20250421 11:44:45.084" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=135.0.7049.96)
+Stacktrace:
+	GetHandleVerifier [0x00007FF72A445355+78597]
+	GetHandleVerifier [0x00007FF72A4453B0+78688]
+	(No symbol) [0x00007FF72A1F91AA]
+	(No symbol) [0x00007FF72A1D1B63]
+	(No symbol) [0x00007FF72A27EB6E]
+	(No symbol) [0x00007FF72A29EBB2]
+	(No symbol) [0x00007FF72A276EC3]
+	(No symbol) [0x00007FF72A2403F8]
+	(No symbol) [0x00007FF72A241163]
+	GetHandleVerifier [0x00007FF72A6EEF0D+2870973]
+	GetHandleVerifier [0x00007FF72A6E96B8+2848360]
+	GetHandleVerifier [0x00007FF72A706993+2967875]
+	GetHandleVerifier [0x00007FF72A46019A+188746]
+	GetHandleVerifier [0x00007FF72A46847F+222255]
+	GetHandleVerifier [0x00007FF72A44D2D4+111236]
+	GetHandleVerifier [0x00007FF72A44D482+111666]
+	GetHandleVerifier [0x00007FF72A4335A9+5465]
+	BaseThreadInitThunk [0x00007FFC213EE8D7+23]
+	RtlUserThreadStart [0x00007FFC22CB14FC+44]
+</msg>
+<msg timestamp="20250421 11:44:45.085" level="FAIL">NoSuchWindowException: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=135.0.7049.96)
+Stacktrace:
+	GetHandleVerifier [0x00007FF72A445355+78597]
+	GetHandleVerifier [0x00007FF72A4453B0+78688]
+	(No symbol) [0x00007FF72A1F91AA]
+	(No symbol) [0x00007FF72A1D1B63]
+	(No symbol) [0x00007FF72A27EB6E]
+	(No symbol) [0x00007FF72A29EBB2]
+	(No symbol) [0x00007FF72A276EC3]
+	(No symbol) [0x00007FF72A2403F8]
+	(No symbol) [0x00007FF72A241163]
+	GetHandleVerifier [0x00007FF72A6EEF0D+2870973]
+	GetHandleVerifier [0x00007FF72A6E96B8+2848360]
+	GetHandleVerifier [0x00007FF72A706993+2967875]
+	GetHandleVerifier [0x00007FF72A46019A+188746]
+	GetHandleVerifier [0x00007FF72A46847F+222255]
+	GetHandleVerifier [0x00007FF72A44D2D4+111236]
+	GetHandleVerifier [0x00007FF72A44D482+111666]
+	GetHandleVerifier [0x00007FF72A4335A9+5465]
+	BaseThreadInitThunk [0x00007FFC213EE8D7+23]
+	RtlUserThreadStart [0x00007FFC22CB14FC+44]
+</msg>
+<status status="FAIL" starttime="20250421 11:44:45.081" endtime="20250421 11:44:45.087"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>Waiting for sign header to be visible</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" starttime="20250421 11:44:45.087" endtime="20250421 11:44:45.087"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${sign_header}</arg>
+<arg>30s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="NOT RUN" starttime="20250421 11:44:45.087" endtime="20250421 11:44:45.087"/>
+</kw>
+<status status="FAIL" starttime="20250421 11:44:42.473" endtime="20250421 11:44:45.087"/>
+</kw>
+<test id="s1-s6-t1" name="Manage Files" line="8">
+<status status="FAIL" starttime="20250421 11:44:45.087" endtime="20250421 11:44:45.087">Parent suite setup failed:
+NoSuchWindowException: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=135.0.7049.96)
+Stacktrace:
+	GetHandleVerifier [0x00007FF72A445355+78597]
+	GetHandleVerifier [0x00007FF72A4453B0+78688]
+	(No symbol) [0x00007FF72A1F91AA]
+	(No symbol) [0x00007FF72A1D1B63]
+	(No symbol) [0x00007FF72A27EB6E]
+	(No symbol) [0x00007FF72A29EBB2]
+	(No symbol) [0x00007FF72A276EC3]
+	(No symbol) [0x00007FF72A2403F8]
+	(No symbol) [0x00007FF72A241163]
+	GetHandleVerifier [0x00007FF72A6EEF0D+2870973]
+	GetHandleVerifier [0x00007FF72A6E96B8+2848360]
+	GetHandleVerifier [0x00007FF72A706993+2967875]
+	GetHandleVerifier [0x00007FF72A46019A+188746]
+	GetHandleVerifier [0x00007FF72A46847F+222255]
+	GetHandleVerifier [0x00007FF72A44D2D4+111236]
+	GetHandleVerifier [0x00007FF72A44D482+111666]
+	GetHandleVerifier [0x00007FF72A4335A9+5465]
+	BaseThreadInitThunk [0x00007FFC213EE8D7+23]
+	RtlUserThreadStart [0x00007FFC22CB14FC+44]
+</status>
+</test>
+<status status="FAIL" starttime="20250421 11:44:42.441" endtime="20250421 11:44:45.089">Suite setup failed:
+NoSuchWindowException: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=135.0.7049.96)
+Stacktrace:
+	GetHandleVerifier [0x00007FF72A445355+78597]
+	GetHandleVerifier [0x00007FF72A4453B0+78688]
+	(No symbol) [0x00007FF72A1F91AA]
+	(No symbol) [0x00007FF72A1D1B63]
+	(No symbol) [0x00007FF72A27EB6E]
+	(No symbol) [0x00007FF72A29EBB2]
+	(No symbol) [0x00007FF72A276EC3]
+	(No symbol) [0x00007FF72A2403F8]
+	(No symbol) [0x00007FF72A241163]
+	GetHandleVerifier [0x00007FF72A6EEF0D+2870973]
+	GetHandleVerifier [0x00007FF72A6E96B8+2848360]
+	GetHandleVerifier [0x00007FF72A706993+2967875]
+	GetHandleVerifier [0x00007FF72A46019A+188746]
+	GetHandleVerifier [0x00007FF72A46847F+222255]
+	GetHandleVerifier [0x00007FF72A44D2D4+111236]
+	GetHandleVerifier [0x00007FF72A44D482+111666]
+	GetHandleVerifier [0x00007FF72A4335A9+5465]
+	BaseThreadInitThunk [0x00007FFC213EE8D7+23]
+	RtlUserThreadStart [0x00007FFC22CB14FC+44]
+</status>
+</suite>
+<suite id="s1-s7" name="Click preview" source="D:\Github_pipeline\automation\TestCases\Files\Click_preview.robot">
+<kw name="Open the application" library="loginKeywords" type="SETUP">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${url}</arg>
+<arg>${browser}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20250421 11:44:45.117" level="INFO">Opening browser 'Chrome' to base url 'https://ig-web-channel.qa.iguroo.com/auth/signin'.</msg>
+<status status="PASS" starttime="20250421 11:44:45.117" endtime="20250421 11:44:47.771"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<msg timestamp="20250421 11:44:47.771" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=135.0.7049.96)
+Stacktrace:
+	GetHandleVerifier [0x00007FF72A445355+78597]
+	GetHandleVerifier [0x00007FF72A4453B0+78688]
+	(No symbol) [0x00007FF72A1F91AA]
+	(No symbol) [0x00007FF72A1D1B63]
+	(No symbol) [0x00007FF72A27EB6E]
+	(No symbol) [0x00007FF72A29EBB2]
+	(No symbol) [0x00007FF72A276EC3]
+	(No symbol) [0x00007FF72A2403F8]
+	(No symbol) [0x00007FF72A241163]
+	GetHandleVerifier [0x00007FF72A6EEF0D+2870973]
+	GetHandleVerifier [0x00007FF72A6E96B8+2848360]
+	GetHandleVerifier [0x00007FF72A706993+2967875]
+	GetHandleVerifier [0x00007FF72A46019A+188746]
+	GetHandleVerifier [0x00007FF72A46847F+222255]
+	GetHandleVerifier [0x00007FF72A44D2D4+111236]
+	GetHandleVerifier [0x00007FF72A44D482+111666]
+	GetHandleVerifier [0x00007FF72A4335A9+5465]
+	BaseThreadInitThunk [0x00007FFC213EE8D7+23]
+	RtlUserThreadStart [0x00007FFC22CB14FC+44]
+</msg>
+<msg timestamp="20250421 11:44:47.771" level="FAIL">NoSuchWindowException: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=135.0.7049.96)
+Stacktrace:
+	GetHandleVerifier [0x00007FF72A445355+78597]
+	GetHandleVerifier [0x00007FF72A4453B0+78688]
+	(No symbol) [0x00007FF72A1F91AA]
+	(No symbol) [0x00007FF72A1D1B63]
+	(No symbol) [0x00007FF72A27EB6E]
+	(No symbol) [0x00007FF72A29EBB2]
+	(No symbol) [0x00007FF72A276EC3]
+	(No symbol) [0x00007FF72A2403F8]
+	(No symbol) [0x00007FF72A241163]
+	GetHandleVerifier [0x00007FF72A6EEF0D+2870973]
+	GetHandleVerifier [0x00007FF72A6E96B8+2848360]
+	GetHandleVerifier [0x00007FF72A706993+2967875]
+	GetHandleVerifier [0x00007FF72A46019A+188746]
+	GetHandleVerifier [0x00007FF72A46847F+222255]
+	GetHandleVerifier [0x00007FF72A44D2D4+111236]
+	GetHandleVerifier [0x00007FF72A44D482+111666]
+	GetHandleVerifier [0x00007FF72A4335A9+5465]
+	BaseThreadInitThunk [0x00007FFC213EE8D7+23]
+	RtlUserThreadStart [0x00007FFC22CB14FC+44]
+</msg>
+<status status="FAIL" starttime="20250421 11:44:47.771" endtime="20250421 11:44:47.771"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>Waiting for sign header to be visible</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" starttime="20250421 11:44:47.771" endtime="20250421 11:44:47.771"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${sign_header}</arg>
+<arg>30s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="NOT RUN" starttime="20250421 11:44:47.771" endtime="20250421 11:44:47.771"/>
+</kw>
+<status status="FAIL" starttime="20250421 11:44:45.116" endtime="20250421 11:44:47.771"/>
+</kw>
+<test id="s1-s7-t1" name="Manage Files" line="8">
+<status status="FAIL" starttime="20250421 11:44:47.771" endtime="20250421 11:44:47.771">Parent suite setup failed:
+NoSuchWindowException: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=135.0.7049.96)
+Stacktrace:
+	GetHandleVerifier [0x00007FF72A445355+78597]
+	GetHandleVerifier [0x00007FF72A4453B0+78688]
+	(No symbol) [0x00007FF72A1F91AA]
+	(No symbol) [0x00007FF72A1D1B63]
+	(No symbol) [0x00007FF72A27EB6E]
+	(No symbol) [0x00007FF72A29EBB2]
+	(No symbol) [0x00007FF72A276EC3]
+	(No symbol) [0x00007FF72A2403F8]
+	(No symbol) [0x00007FF72A241163]
+	GetHandleVerifier [0x00007FF72A6EEF0D+2870973]
+	GetHandleVerifier [0x00007FF72A6E96B8+2848360]
+	GetHandleVerifier [0x00007FF72A706993+2967875]
+	GetHandleVerifier [0x00007FF72A46019A+188746]
+	GetHandleVerifier [0x00007FF72A46847F+222255]
+	GetHandleVerifier [0x00007FF72A44D2D4+111236]
+	GetHandleVerifier [0x00007FF72A44D482+111666]
+	GetHandleVerifier [0x00007FF72A4335A9+5465]
+	BaseThreadInitThunk [0x00007FFC213EE8D7+23]
+	RtlUserThreadStart [0x00007FFC22CB14FC+44]
+</status>
+</test>
+<status status="FAIL" starttime="20250421 11:44:45.095" endtime="20250421 11:44:47.771">Suite setup failed:
+NoSuchWindowException: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=135.0.7049.96)
+Stacktrace:
+	GetHandleVerifier [0x00007FF72A445355+78597]
+	GetHandleVerifier [0x00007FF72A4453B0+78688]
+	(No symbol) [0x00007FF72A1F91AA]
+	(No symbol) [0x00007FF72A1D1B63]
+	(No symbol) [0x00007FF72A27EB6E]
+	(No symbol) [0x00007FF72A29EBB2]
+	(No symbol) [0x00007FF72A276EC3]
+	(No symbol) [0x00007FF72A2403F8]
+	(No symbol) [0x00007FF72A241163]
+	GetHandleVerifier [0x00007FF72A6EEF0D+2870973]
+	GetHandleVerifier [0x00007FF72A6E96B8+2848360]
+	GetHandleVerifier [0x00007FF72A706993+2967875]
+	GetHandleVerifier [0x00007FF72A46019A+188746]
+	GetHandleVerifier [0x00007FF72A46847F+222255]
+	GetHandleVerifier [0x00007FF72A44D2D4+111236]
+	GetHandleVerifier [0x00007FF72A44D482+111666]
+	GetHandleVerifier [0x00007FF72A4335A9+5465]
+	BaseThreadInitThunk [0x00007FFC213EE8D7+23]
+	RtlUserThreadStart [0x00007FFC22CB14FC+44]
+</status>
+</suite>
+<suite id="s1-s8" name="Learning file" source="D:\Github_pipeline\automation\TestCases\Files\Learning_file.robot">
+<kw name="Open the application" library="loginKeywords" type="SETUP">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${url}</arg>
+<arg>${browser}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20250421 11:44:47.807" level="INFO">Opening browser 'Chrome' to base url 'https://ig-web-channel.qa.iguroo.com/auth/signin'.</msg>
+<status status="PASS" starttime="20250421 11:44:47.807" endtime="20250421 11:44:50.331"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<msg timestamp="20250421 11:44:50.335" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=135.0.7049.96)
+Stacktrace:
+	GetHandleVerifier [0x00007FF72A445355+78597]
+	GetHandleVerifier [0x00007FF72A4453B0+78688]
+	(No symbol) [0x00007FF72A1F91AA]
+	(No symbol) [0x00007FF72A1D1B63]
+	(No symbol) [0x00007FF72A27EB6E]
+	(No symbol) [0x00007FF72A29EBB2]
+	(No symbol) [0x00007FF72A276EC3]
+	(No symbol) [0x00007FF72A2403F8]
+	(No symbol) [0x00007FF72A241163]
+	GetHandleVerifier [0x00007FF72A6EEF0D+2870973]
+	GetHandleVerifier [0x00007FF72A6E96B8+2848360]
+	GetHandleVerifier [0x00007FF72A706993+2967875]
+	GetHandleVerifier [0x00007FF72A46019A+188746]
+	GetHandleVerifier [0x00007FF72A46847F+222255]
+	GetHandleVerifier [0x00007FF72A44D2D4+111236]
+	GetHandleVerifier [0x00007FF72A44D482+111666]
+	GetHandleVerifier [0x00007FF72A4335A9+5465]
+	BaseThreadInitThunk [0x00007FFC213EE8D7+23]
+	RtlUserThreadStart [0x00007FFC22CB14FC+44]
+</msg>
+<msg timestamp="20250421 11:44:50.336" level="FAIL">NoSuchWindowException: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=135.0.7049.96)
+Stacktrace:
+	GetHandleVerifier [0x00007FF72A445355+78597]
+	GetHandleVerifier [0x00007FF72A4453B0+78688]
+	(No symbol) [0x00007FF72A1F91AA]
+	(No symbol) [0x00007FF72A1D1B63]
+	(No symbol) [0x00007FF72A27EB6E]
+	(No symbol) [0x00007FF72A29EBB2]
+	(No symbol) [0x00007FF72A276EC3]
+	(No symbol) [0x00007FF72A2403F8]
+	(No symbol) [0x00007FF72A241163]
+	GetHandleVerifier [0x00007FF72A6EEF0D+2870973]
+	GetHandleVerifier [0x00007FF72A6E96B8+2848360]
+	GetHandleVerifier [0x00007FF72A706993+2967875]
+	GetHandleVerifier [0x00007FF72A46019A+188746]
+	GetHandleVerifier [0x00007FF72A46847F+222255]
+	GetHandleVerifier [0x00007FF72A44D2D4+111236]
+	GetHandleVerifier [0x00007FF72A44D482+111666]
+	GetHandleVerifier [0x00007FF72A4335A9+5465]
+	BaseThreadInitThunk [0x00007FFC213EE8D7+23]
+	RtlUserThreadStart [0x00007FFC22CB14FC+44]
+</msg>
+<status status="FAIL" starttime="20250421 11:44:50.331" endtime="20250421 11:44:50.336"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>Waiting for sign header to be visible</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" starttime="20250421 11:44:50.336" endtime="20250421 11:44:50.336"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${sign_header}</arg>
+<arg>30s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="NOT RUN" starttime="20250421 11:44:50.336" endtime="20250421 11:44:50.336"/>
+</kw>
+<status status="FAIL" starttime="20250421 11:44:47.807" endtime="20250421 11:44:50.336"/>
+</kw>
+<test id="s1-s8-t1" name="Manage Files" line="8">
+<status status="FAIL" starttime="20250421 11:44:50.336" endtime="20250421 11:44:50.337">Parent suite setup failed:
+NoSuchWindowException: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=135.0.7049.96)
+Stacktrace:
+	GetHandleVerifier [0x00007FF72A445355+78597]
+	GetHandleVerifier [0x00007FF72A4453B0+78688]
+	(No symbol) [0x00007FF72A1F91AA]
+	(No symbol) [0x00007FF72A1D1B63]
+	(No symbol) [0x00007FF72A27EB6E]
+	(No symbol) [0x00007FF72A29EBB2]
+	(No symbol) [0x00007FF72A276EC3]
+	(No symbol) [0x00007FF72A2403F8]
+	(No symbol) [0x00007FF72A241163]
+	GetHandleVerifier [0x00007FF72A6EEF0D+2870973]
+	GetHandleVerifier [0x00007FF72A6E96B8+2848360]
+	GetHandleVerifier [0x00007FF72A706993+2967875]
+	GetHandleVerifier [0x00007FF72A46019A+188746]
+	GetHandleVerifier [0x00007FF72A46847F+222255]
+	GetHandleVerifier [0x00007FF72A44D2D4+111236]
+	GetHandleVerifier [0x00007FF72A44D482+111666]
+	GetHandleVerifier [0x00007FF72A4335A9+5465]
+	BaseThreadInitThunk [0x00007FFC213EE8D7+23]
+	RtlUserThreadStart [0x00007FFC22CB14FC+44]
+</status>
+</test>
+<status status="FAIL" starttime="20250421 11:44:47.771" endtime="20250421 11:44:50.339">Suite setup failed:
+NoSuchWindowException: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=135.0.7049.96)
+Stacktrace:
+	GetHandleVerifier [0x00007FF72A445355+78597]
+	GetHandleVerifier [0x00007FF72A4453B0+78688]
+	(No symbol) [0x00007FF72A1F91AA]
+	(No symbol) [0x00007FF72A1D1B63]
+	(No symbol) [0x00007FF72A27EB6E]
+	(No symbol) [0x00007FF72A29EBB2]
+	(No symbol) [0x00007FF72A276EC3]
+	(No symbol) [0x00007FF72A2403F8]
+	(No symbol) [0x00007FF72A241163]
+	GetHandleVerifier [0x00007FF72A6EEF0D+2870973]
+	GetHandleVerifier [0x00007FF72A6E96B8+2848360]
+	GetHandleVerifier [0x00007FF72A706993+2967875]
+	GetHandleVerifier [0x00007FF72A46019A+188746]
+	GetHandleVerifier [0x00007FF72A46847F+222255]
+	GetHandleVerifier [0x00007FF72A44D2D4+111236]
+	GetHandleVerifier [0x00007FF72A44D482+111666]
+	GetHandleVerifier [0x00007FF72A4335A9+5465]
+	BaseThreadInitThunk [0x00007FFC213EE8D7+23]
+	RtlUserThreadStart [0x00007FFC22CB14FC+44]
+</status>
+</suite>
+<suite id="s1-s9" name="Others file" source="D:\Github_pipeline\automation\TestCases\Files\Others_file.robot">
+<kw name="Open the application" library="loginKeywords" type="SETUP">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${url}</arg>
+<arg>${browser}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20250421 11:44:50.368" level="INFO">Opening browser 'Chrome' to base url 'https://ig-web-channel.qa.iguroo.com/auth/signin'.</msg>
+<status status="PASS" starttime="20250421 11:44:50.368" endtime="20250421 11:44:52.584"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<msg timestamp="20250421 11:44:52.588" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=135.0.7049.96)
+Stacktrace:
+	GetHandleVerifier [0x00007FF72A445355+78597]
+	GetHandleVerifier [0x00007FF72A4453B0+78688]
+	(No symbol) [0x00007FF72A1F91AA]
+	(No symbol) [0x00007FF72A1D1B63]
+	(No symbol) [0x00007FF72A27EB6E]
+	(No symbol) [0x00007FF72A29EBB2]
+	(No symbol) [0x00007FF72A276EC3]
+	(No symbol) [0x00007FF72A2403F8]
+	(No symbol) [0x00007FF72A241163]
+	GetHandleVerifier [0x00007FF72A6EEF0D+2870973]
+	GetHandleVerifier [0x00007FF72A6E96B8+2848360]
+	GetHandleVerifier [0x00007FF72A706993+2967875]
+	GetHandleVerifier [0x00007FF72A46019A+188746]
+	GetHandleVerifier [0x00007FF72A46847F+222255]
+	GetHandleVerifier [0x00007FF72A44D2D4+111236]
+	GetHandleVerifier [0x00007FF72A44D482+111666]
+	GetHandleVerifier [0x00007FF72A4335A9+5465]
+	BaseThreadInitThunk [0x00007FFC213EE8D7+23]
+	RtlUserThreadStart [0x00007FFC22CB14FC+44]
+</msg>
+<msg timestamp="20250421 11:44:52.588" level="FAIL">NoSuchWindowException: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=135.0.7049.96)
+Stacktrace:
+	GetHandleVerifier [0x00007FF72A445355+78597]
+	GetHandleVerifier [0x00007FF72A4453B0+78688]
+	(No symbol) [0x00007FF72A1F91AA]
+	(No symbol) [0x00007FF72A1D1B63]
+	(No symbol) [0x00007FF72A27EB6E]
+	(No symbol) [0x00007FF72A29EBB2]
+	(No symbol) [0x00007FF72A276EC3]
+	(No symbol) [0x00007FF72A2403F8]
+	(No symbol) [0x00007FF72A241163]
+	GetHandleVerifier [0x00007FF72A6EEF0D+2870973]
+	GetHandleVerifier [0x00007FF72A6E96B8+2848360]
+	GetHandleVerifier [0x00007FF72A706993+2967875]
+	GetHandleVerifier [0x00007FF72A46019A+188746]
+	GetHandleVerifier [0x00007FF72A46847F+222255]
+	GetHandleVerifier [0x00007FF72A44D2D4+111236]
+	GetHandleVerifier [0x00007FF72A44D482+111666]
+	GetHandleVerifier [0x00007FF72A4335A9+5465]
+	BaseThreadInitThunk [0x00007FFC213EE8D7+23]
+	RtlUserThreadStart [0x00007FFC22CB14FC+44]
+</msg>
+<status status="FAIL" starttime="20250421 11:44:52.584" endtime="20250421 11:44:52.589"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>Waiting for sign header to be visible</arg>
+<doc>Logs the given message with the given level.</doc>

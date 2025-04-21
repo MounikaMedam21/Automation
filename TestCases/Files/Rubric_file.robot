@@ -8,7 +8,7 @@ Suite Setup     Open the application
 Manage Files
     Login To Application    9493408792  Test@123
     sleep   3s
-    Search for the Username     Harika
+    Search for the Username     Bhanu1 Prasad1
     Click on the 3 dots tooltip
     Click on the files
     Fill the all the details for rubric file type
