@@ -11,4 +11,4 @@ Manage Files
     Search for the Username     Bhanu1 Prasad1
     Click on the 3 dots tooltip
     Click on the files
-    Check validation message for minimum characters     tes
+    Check validation message for minimum characters     test
