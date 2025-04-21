@@ -26,6 +26,8 @@ jobs:
           else
             echo "No requirements.txt found. Skipping pip install."
             fi
+            # Install Robot Framework
+            pip install robotframework
         
       - name: Run Robot Framework tests
         id: test-step
