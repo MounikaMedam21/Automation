@@ -1,13 +1,11 @@
 *** Settings ***
 Library  SeleniumLibrary
 Resource    ../../PageObjects/TenantObjects/Login.robot
+
 *** Keywords ***
 Open the application
-    Open Browser  ${url}  ${browser}
-    Maximize Browser Window
-    Log    Waiting for sign header to be visible
-    Wait Until Element Is Visible    ${sign_header}    30s
-
+    [Arguments]      ${URL}    ${browser}
+    Open Browser    ${url}    ${browser}
 
 Login To Application
     [Arguments]    ${username}    ${pwd}
