@@ -1,6 +1,5 @@
 *** Settings ***
 Library  SeleniumLibrary
-Variables  ../Config/Properties.py
 Resource    ../../PageObjects/TenantObjects/Login.robot
 *** Keywords ***
 Open the application
