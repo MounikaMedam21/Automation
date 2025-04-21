@@ -28,6 +28,9 @@ jobs:
             fi
             # Install Robot Framework
             pip install robotframework
+            pip install robotframework
+            pip install robotframework-seleniumlibrary
+            pip install selenium
         
       - name: Run Robot Framework tests
         id: test-step
